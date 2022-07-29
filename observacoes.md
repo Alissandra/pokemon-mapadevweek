@@ -15,3 +15,10 @@
 - arquio>auto save/salvamento automático (fica salvando qualquer alteração automaticamente)
 - arquivo>preferencias>configurações>pesquisar por wrap>editor word wrap>marcar on
 - link:favicon + enter (tag de link para colocar o favicon - icone na aba)
+- 
+
+## Dicas
+- A propriedade CSS 'display' com valor 'block' faz ocupar a largura inteira da tela. Alguns elementos por padrão são 'block' ou 'inline' que podem ser alterados.
+- Utilizar 'class' para CSS e 'id' para JavaScript
+- Para indicar que o elemento é clicável 'cursor: pointer'
+- Colocar o código hexadecimal das cores no CSS, evitar usar nomes 

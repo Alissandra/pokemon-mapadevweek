@@ -1,8 +1,10 @@
 * {
     /* boas práticas, tirar o margin e o padding*/
     margin: 0;
-    padding: 0; 
-    box-sizing: border-box; /* para não contar valor de padding nas larguras dos elementos*/
+    padding: 0;
+    
+    /* para não contar valor de padding nas larguras dos elementos*/
+    box-sizing: border-box; 
 }
 
 ul {

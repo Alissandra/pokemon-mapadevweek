@@ -1,3 +1,73 @@
 body {
     font-family: 'Outfit', sans-serif;
+    background-image: url(../imagens/fundo-site.png);
+    background-repeat: no-repeat;
+    /*Para que a imagem cubra todo o body:*/
+    background-size: cover;
+    /*Para ocupar 100% da altura*/
+    min-height: 100vh;
+}
+
+.cabecalho {
+    background-color: red;
+    /*Ao utilizar 'flex' no elemento pai, os elementos filhos ficam um ao lado do outro:*/
+    display: flex;
+    /*Centralizando os filhos horizontalmente na página:*/
+    justify-content: center;
+    /*Alinhado os elementos filhos verticalmente:*/
+    align-items: center;
+    /*Dá um espaço entre os elementos filhos, funciona apenas quando usado o 'display: flex. Mais indicado o 'gap' do que o 'margin'*/
+    gap: 15px;
+    /*Dá espaço entre o elemento e o topo - 'Padding' é indicado para espaçamento interno ao elemento, para desgrudar das bordas. Já o 'margin' é mais indicado para espaçamento entre elementos*/
+    padding-top: 50px;
+}
+
+.cabecalho .titulo {
+    color: #f1ecff;
+}
+
+.cabecalho .pokebola {
+    width: 30px;
+    height: 30px;
+}
+
+.pokemon-slider {
+    background-color: aquamarine;
+    display: flex;
+    /*Alinhando os elementos no centro verticalmente, assim as setas ficam do tamanho real da imagem e não esticada como ficaria sem essa propriedade*/
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 60px 0;
+}
+
+.lista-pokemons {
+    background-color: blue;
+    width: 310px;
+    height: 520px;
+}
+
+.btn-seta {
+    background-color: #f1ecff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: none;
+    /*Para indicar que o elemento é clicável:*/
+    cursor: pointer;
+    /*essa propriedae é colocada no elemento que vai sofrer a transição, no caso a seta aqui vai sofrer a transição de mudança de cor ao passar o mouse em cima*/
+    transition: background-color 0.2s;
+    /*pode pegar códigos prontos no site: https://getcssscan.com/css-box-shadow-examples*/
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.btn-seta.btn-voltar {
+    /*Para rotacionar a imagem da seta em 180 graus no eixo y, assim ela fica apontando para esquerda(voltar)*/
+    transform: rotatey(180deg);
+}
+
+/*':hover' pseudo classe*/
+.btn-seta:hover {
+    background-color: #8351fe;
+
 }
