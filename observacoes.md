@@ -18,6 +18,7 @@
 - 
 
 ## Dicas
+- Para estilizar, considerar cada elemento uma 'caixinha' ou fazer uma 'div' ou usar a própria tag do elemento, como <p>, <h1> etc.
 - A propriedade CSS 'display' com valor 'block' faz ocupar a largura inteira da tela. Alguns elementos por padrão são 'block' ou 'inline' que podem ser alterados.
 - Utilizar 'class' para CSS e 'id' para JavaScript
 - Para indicar que o elemento é clicável 'cursor: pointer'
