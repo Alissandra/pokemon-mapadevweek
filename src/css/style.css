@@ -21,6 +21,7 @@ body {
     padding-top: 50px;
 }
 
+/* aqui o elemento que tem a clase 'titulo' está dentro do elemento que tem a classe 'cabecalho'*/
 .cabecalho .titulo {
     color: #f1ecff;
 }
@@ -60,6 +61,7 @@ body {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+/*aqui os nomes estão juntos porque eles são classe de um mesmo elemento*/
 .btn-seta.btn-voltar {
     /*Para rotacionar a imagem da seta em 180 graus no eixo y, assim ela fica apontando para esquerda(voltar)*/
     transform: rotatey(180deg);
@@ -173,4 +175,6 @@ body {
     max-height: 115px;
     /*Para que o texto não transborde/vaze no eixo y, por conta dele surge o scroll/barra de rolagem*/
     overflow-y: auto;
+    
+
 }
