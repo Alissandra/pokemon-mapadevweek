@@ -74,7 +74,7 @@ body {
 
 .cartao {
     /*o range é de 0 a 1 - Para esconder os outros cards. 0 fica totalmente apagado.*/
-    opacity: 0;
+    /* opacity: 0; */
     background-color: blueviolet;
     /*p que o cartão (elemento <li>) ocupe toda a altura do cartão (elemento <ul>)*/
     height: 100%;
