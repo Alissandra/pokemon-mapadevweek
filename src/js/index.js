@@ -21,16 +21,33 @@ Objetivos:
 
 /*Oj.1 - Passo 1 - Pegar o elemento HTML da seta avançar;*/
 //o id aqui não precisa colocar a '#'
-const btnAvancar = document.getElementById('btn-avancar');
+const btnAvancar = document.getElementById("btn-avancar");
 
-/*Oj.1 - Passo 2 - Identificar o clique do usuário na seta avançar;*/
-//addEventListener() - 
-btnAvancar.addEventListener('click', function () {
+//querySelectorAll() - está buscando todos os elementos que tem a classe '.cartao';
+const cartoes = document.querySelectorAll(".cartao");
+//está apontando para o primeiro cartão, na posição '0', o Pikachu
+let cartaoAtual = 0;
+
+/*Oj.1 - Passo 2 - Identificar o clique do usuário na seta avançar;
+addEventListener() - Fica aguardando o evento descriminado 'click' acontecer para executar a ação que está dentro do método*/
+btnAvancar.addEventListener("click", function () {
+
+    /*'==' é igual? e '===' é identico? - O '- 1' é pq o tamanho da lista é '3' mas as posições vão de '0' a '2', então para ser compatível com a contagem e comparar corretamente coloca-se o '-1'*/ 
+    // console.log("Cartão atual: ", cartaoAtual);
+    // console.log("lista de cartões: ", cartoes.length - 1);
+    // Se essa condição for satirfeita, então 'return' retorne/pare a execução aqui e não mostra mais nada do que está abaixo - cláusula de guarda
+    if(cartaoAtual === cartoes.length - 1) return; 
+
     /*Oj.1 - Passo 3 - Fazer o próximo cartão aparecer;
     Para saber qual o próximo, é preciso ter uma lista/um vetor de cartões*/
-    //querySelectorAll() - 
-    const cartoes = document.querySelectorAll('.cartao');
-    cartoes[1].classList.add('selecionado');
+    cartaoAtual++; //aqui o cartão atual não é mais o da posição zero e sim '1', o Charizard
+    //console.log("Cartão atual após último clique: ", cartaoAtual);
+    cartoes[cartaoAtual].classList.add("selecionado");
+    
+    /*Oj.1 - Passo 4 - Buscar o cartão que está selecionado e esconder:
+            - 4.1 - a classe 'selecionado' no elemento <li> não deve aparecer mais cartão no cartão que será escondido;*/
+    const cartaoSelecionado = document.querySelector(".selecionado");
+    cartaoSelecionado.classList.remove("selecionado");
     
 });
 

@@ -25,6 +25,10 @@
 - Para indicar que o elemento é clicável 'cursor: pointer'
 - Colocar o código hexadecimal das cores no CSS, evitar usar nomes
 - Antes de escrever qualquer código, escrever em português o que o programa precisa fazer, objetivos e os passos de cada objetivo.
+- Se puder, e for de acordo com a regra do negócio da lógica do código, sempre colocar as variáveis fora do método para usar menos memória ao executar o método repetidamente.
+
+# Estudar
+- Debugger do VS COde
 
 ## Links
 - https://getcssscan.com/css-box-shadow-examples
