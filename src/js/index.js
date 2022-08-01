@@ -35,6 +35,13 @@ const cartoes = document.querySelectorAll(".cartao");
 
 let cartaoAtual = 0;
 
+function esconderCartaoSelecionado() {
+    /*Oj.1 - Passo 4 - Buscar o cartão que está selecionado e esconder:
+        - 4.1 - a classe 'selecionado' no elemento <li> não deve aparecer mais cartão no cartão que será escondido;*/
+    const cartaoSelecionado = document.querySelector(".selecionado");
+    cartaoSelecionado.classList.remove("selecionado");
+}
+
 /*Oj.1 - Passo 2 - Identificar o clique do usuário na seta avançar;
 addEventListener() - Fica aguardando o evento descriminado 'click' acontecer para executar a ação que está dentro do método*/
 btnAvancar.addEventListener("click", function () {
@@ -43,12 +50,9 @@ btnAvancar.addEventListener("click", function () {
     // console.log("Cartão atual: ", cartaoAtual);
     // console.log("lista de cartões: ", cartoes.length - 1);
     // Se essa condição for satirfeita, então 'return' retorne/pare a execução aqui e não mostra mais nada do que está abaixo - cláusula de guarda
-    if(cartaoAtual === cartoes.length - 1) return; 
-
-     /*Oj.1 - Passo 4 - Buscar o cartão que está selecionado e esconder:
-            - 4.1 - a classe 'selecionado' no elemento <li> não deve aparecer mais cartão no cartão que será escondido;*/
-    const cartaoSelecionado = document.querySelector(".selecionado");
-    cartaoSelecionado.classList.remove("selecionado");
+    if(cartaoAtual === cartoes.length - 1) return;
+    
+    esconderCartaoSelecionado();     
 
     /*Oj.1 - Passo 3 - Fazer o próximo cartão aparecer;
     Para saber qual o próximo, é preciso ter uma lista/um vetor de cartões*/
@@ -67,8 +71,8 @@ btnAvancar.addEventListener("click", function () {
 btnVoltar.addEventListener("click", function() {
 
     if(cartaoAtual === 0) return; //se o cartão atual for o da posição zero, return, pare a execução, pois já está no primeiro cartão da lista
-    const cartaoSelecionado = document.querySelector(".selecionado");
-    cartaoSelecionado.classList.remove("selecionado");
+    
+    esconderCartaoSelecionado();
     
 
     cartaoAtual--;
