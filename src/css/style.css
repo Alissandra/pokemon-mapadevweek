@@ -2,26 +2,18 @@ body {
     font-family: 'Outfit', sans-serif;
     background-image: url(../imagens/fundo-site.png);
     background-repeat: no-repeat;
-    /*Para que a imagem cubra todo o body:*/
     background-size: cover;
-    /*Para ocupar 100% da altura*/
     min-height: 100vh;
 }
 
 .cabecalho {    
-    /*Ao utilizar 'flex' no elemento pai, os elementos filhos ficam um ao lado do outro:*/
     display: flex;
-    /*Centralizando os filhos horizontalmente na página:*/
     justify-content: center;
-    /*Alinhado os elementos filhos verticalmente:*/
     align-items: center;
-    /*Dá um espaço entre os elementos filhos, funciona apenas quando usado o 'display: flex. Mais indicado o 'gap' do que o 'margin'*/
     gap: 15px;
-    /*Dá espaço entre o elemento e o topo - 'Padding' é indicado para espaçamento interno ao elemento, para desgrudar das bordas. Já o 'margin' é mais indicado para espaçamento entre elementos*/
     padding-top: 50px;
 }
 
-/* aqui o elemento que tem a clase 'titulo' está dentro do elemento que tem a classe 'cabecalho'*/
 .cabecalho .titulo {
     color: #f1ecff;
 }
@@ -33,7 +25,6 @@ body {
 
 .pokemon-slider {
     display: flex;
-    /*Alinhando os elementos no centro verticalmente, assim as setas ficam do tamanho real da imagem e não esticada como ficaria sem essa propriedade*/
     align-items: center;
     justify-content: center;
     gap: 80px;
@@ -43,7 +34,6 @@ body {
 .lista-pokemons {
     width: 310px;
     height: 520px;
-    /*Sempre o 'position: absolute' vai no filho e o 'position: relative' vai no pai para que o cartao fique na posição que queremos, relativa ao pai */
     position: relative;
 }
 
@@ -53,54 +43,39 @@ body {
     height: 70px;
     border-radius: 50px;
     border: none;
-    /*Para indicar que o elemento é clicável:*/
     cursor: pointer;
-    /*essa propriedae é colocada no elemento que vai sofrer a transição, no caso a seta aqui vai sofrer a transição de mudança de cor ao passar o mouse em cima*/
     transition: background-color 0.2s;
-    /*pode pegar códigos prontos no site: https://getcssscan.com/css-box-shadow-examples*/
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
-/*aqui os nomes estão juntos porque eles são classe de um mesmo elemento*/
-.btn-seta.btn-voltar {
-    /*Para rotacionar a imagem da seta em 180 graus no eixo y, assim ela fica apontando para esquerda(voltar)*/
+.btn-seta.btn-voltar {    
     transform: rotatey(180deg);
 }
 
-/*':hover' pseudo classe*/
 .btn-seta:hover {
     background-color: #8351fe;
 }
 
-.cartao {
-    /*o range é de 0 a 1 - Para esconder os outros cards. 0 fica totalmente apagado.*/
+.cartao {    
     opacity: 0;
     background-color: blueviolet;
-    /*p que o cartão (elemento <li>) ocupe toda a altura do cartão (elemento <ul>)*/
     height: 100%;
-    /*Para alinhar os elementos do cartão: */
     display: flex;
-    /*É preciso modificar a direção do 'flex' para 'column' porque por padrão vem como 'row' = linha*/
     flex-direction: column;
-    /*Aqui vai ser alinhado verticalmente, dando um espaço entre os elementos filhos*/
     justify-content: space-between;
-    /*Sempre o 'position: absolute' vai no filho e o 'position: relative' vai no pai. Com o 'absolute, o elemento flutua por cima dos outros elementos html da página, e usando o 'position: relative' no pai que é 'cartao' que é o <ul> aí o cartão vai ficar na posição correta*/
     position: absolute;
     padding: 12px;
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    /*Para deixar a transição mais sutil na mudança de cartão*/
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
     transition: opacity 0.3s ease-in-out;
 }
 
 .cartao.selecionado {
     opacity: 1;
-    /*z-inex é o eixo y, de profundidade, fazendo tipo um 3D, com ele aqui, o card selecionado sempre ficará em cima, se não tivesse ele, o cartão que não estivesse selecionado iria ficar em cima do selecionado de forma apagada, com opacidade 0, atrapalhando, pois não conseguiria rolar o texto do cartão selecionado*/
     z-index: 1;
 }
 
 .fundo-1 {
-     /*Dá p colocar vários valores de uma vez p a mesma propriedade*/
     background: url(../imagens/fundo-card-1.jpg)
     no-repeat;
 }
@@ -125,7 +100,6 @@ body {
     padding: 8px 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
 .cartao .informacoes .nome {
@@ -140,14 +114,12 @@ body {
     border-radius: 20px;
 }
 
-/*vai alinhar ao cenrtro todos os elementos do cartão, caso as imagens sejam alteradas e tenham outros tamanhos*/
 .container-iamgem {
     text-align: center;
 }
 
 
 .cartao .imagem-pokemon {
-    /*Aqui, largura e altura e máxima é para não estourar a imagem para fora do cartão, ela vai ocupar 100% do cartão, caso a imagem seja alterada por uma imagem grande*/
     max-width: 100%;
     max-height: 280px;
     padding: 20px;
@@ -171,9 +143,7 @@ body {
     font-size: 14px;
     padding: 12px;
     text-align: justify;
-    /*Para que o texto não ultrapasse essa altura máxima*/
     max-height: 115px;
-    /*Para que o texto não transborde/vaze no eixo y, por conta dele surge o scroll/barra de rolagem*/
     overflow-y: auto;
     
 
